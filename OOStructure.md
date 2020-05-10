@@ -1,20 +1,23 @@
 # OO Design Structure
 
 ##### Reference
-https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm
+https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm - with if/else
+https://medium.com/@ssaurel/implement-the-adapter-design-pattern-in-java-f9adb6a8828f - without
 
 ---
 
 ## IAdvancedMediaPlayer Interface
  #### Methods:
- - playVlc(Media media)
- - playMp4(Media media)
+ - play(Media media)
 
 ## IMediaPlayer Interface
  #### Methods:
  - play(Media media)
 
 ---
+
+## MediaFormat Enum
+ // MP3, MP4, VLC
 
 ## Media Class
  #### Attributes:
@@ -23,13 +26,11 @@ https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm
 
 ## VlcPlayer Class implements IAdvancedMediaPlayer
  #### Methods:
- - playVlc(Media media)
- - playMp4(Media media)
+ - play(Media media)
 
 ## Mp4Player Class implements IAdvancedMediaPlayer
  #### Methods:
- - playVlc(Media media)
- - playMp4(Media media)
+ - play(Media media)
 
 ## MediaAdapter Class implements IMediaPlayer
  // ADAPTER CLASS
@@ -37,7 +38,7 @@ https://www.tutorialspoint.com/design_pattern/adapter_pattern.htm
  - advancedMediaPlayer IAdvancedMediaPlayer
  #### Methods:
  - play(Media media)
- - MediaAdapter(String format) \
+ - MediaAdapter(MediaFormat format) \
  // constructor - creates IAdvancedMediaPlayer object by format
 
 ## AudioPlayer Class implements IMediaPlayer
